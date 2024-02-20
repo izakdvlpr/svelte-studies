@@ -1,4 +1,4 @@
-import { type User, getUsers } from "@/lib/database/user";
+import { type User, getUsers } from "@/database/user";
 
 export interface UsersLoadData {
 	users: User[];

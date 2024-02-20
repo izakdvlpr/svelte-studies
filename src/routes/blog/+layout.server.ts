@@ -1,10 +1,6 @@
-import { type Post, posts } from "./data";
+import { posts } from "./data";
 
-export interface BlogLoadData {
-	posts: Pick<Post, "slug" | "title">[];
-}
-
-export function load(): BlogLoadData {
+export function load() {
 	return {
 		posts: posts.map((post) => ({
 			slug: post.slug,

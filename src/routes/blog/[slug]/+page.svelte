@@ -1,7 +1,7 @@
 <script lang="ts">
-  import type { BlogSlugLoadData } from "./+page.server";
+  import type { PageData } from "./$types";
 
-  export let data: BlogSlugLoadData;
+  export let data: PageData;
 </script>
 
 <h1>{data.post.title}</h1>

@@ -23,7 +23,7 @@
         const input = e.currentTarget;
         const name = input.value;
 
-        const response = await fetch("/users/api", {
+        const response = await fetch("/api/users", {
           method: "POST",
           body: JSON.stringify({ name }),
           headers: {
@@ -47,7 +47,7 @@
 
         <button
           on:click={async () => {
-            await fetch(`/users/api/${user.id}`, {
+            await fetch(`/api/users/${user.id}`, {
               method: "DELETE",
             });
 

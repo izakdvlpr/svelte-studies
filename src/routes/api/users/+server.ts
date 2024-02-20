@@ -1,6 +1,6 @@
 import { json } from "@sveltejs/kit";
 
-import { createUser } from "@/lib/database/user";
+import { createUser } from "@/database/user";
 
 export async function POST({ request }) {
 	const { name } = await request.json();

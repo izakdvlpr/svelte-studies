@@ -1,12 +1,8 @@
 import { error } from "@sveltejs/kit";
 
-import { type Post, posts } from "../data";
+import { posts } from "../data";
 
-export interface BlogSlugLoadData {
-	post: Post;
-}
-
-export function load({ params }): BlogSlugLoadData {
+export function load({ params }) {
 	const post = posts.find((post) => post.slug === params.slug);
 
 	if (!post) {

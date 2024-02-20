@@ -1,8 +1,7 @@
 <script lang="ts">
-  import type { BlogLoadData } from "../+layout.server";
-  import type { BlogSlugLoadData } from "./+page.server";
+  import type { PageData } from "../$types";
 
-  export let data: BlogLoadData & BlogSlugLoadData;
+  export let data: PageData;
 </script>
 
 <div class="layout">

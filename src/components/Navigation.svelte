@@ -2,22 +2,30 @@
 	export interface Route {
 		name: string;
 		href: string;
+		isPreloadData: boolean;
 	}
 
 	export let routes: Route[] = [
-		{ name: "home", href: "/" },
-		{ name: "about", href: "/about" },
-		{ name: "blog", href: "/blog" },
+		{ name: "home", href: "/", isPreloadData: false },
+		{ name: "about", href: "/about", isPreloadData: true },
+		{ name: "blog", href: "/blog", isPreloadData: false },
 	];
 </script>
 
-<script>
+<script lang="ts">
 	import { page } from "$app/stores";
 </script>
 
 <nav>
-	{#each routes as { name, href }}
-		<a {href} aria-current={$page.url.pathname === href}>{name}</a>
+	{#each routes as { name, href, isPreloadData }}
+		<a
+			{href}
+			data-sveltekit-preload-data={isPreloadData ? "hover" : false}
+			aria-current={$page.url.pathname === href ||
+				(href === "/blog" && $page.url.pathname.startsWith("/blog"))}
+		>
+			{name}
+		</a>
 	{/each}
 </nav>
 

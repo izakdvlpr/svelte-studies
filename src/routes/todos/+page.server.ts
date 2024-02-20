@@ -1,11 +1,6 @@
 import { fail } from "@sveltejs/kit";
 
-import {
-	type Todo,
-	createTodo,
-	deleteTodo,
-	getTodos,
-} from "@/lib/database/todo";
+import { type Todo, createTodo, deleteTodo, getTodos } from "@/database/todo";
 
 export interface TodosLoadData {
 	todos: Todo[];
